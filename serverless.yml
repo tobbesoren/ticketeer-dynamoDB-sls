@@ -37,11 +37,11 @@ functions:
           path: '/events/{id}'
           method: GET
 
-  buyTickets:
-    handler: lambda_functions/buy_ticket/index.handler
+  orderTicket:
+    handler: lambda_functions/order_ticket/index.handler
     events:
       - httpApi:
-          path: 'events/{id}/buy'
+          path: '/order/{id}'
           method: PATCH
 
 

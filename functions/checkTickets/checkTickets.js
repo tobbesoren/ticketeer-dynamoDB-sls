@@ -1,0 +1,3 @@
+function checkTickets(show, wantedTickets) {
+
+}

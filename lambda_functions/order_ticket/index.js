@@ -49,9 +49,10 @@ const db = new AWS.DynamoDB.DocumentClient();
 
 exports.handler = async (event, context) => {
   const showId = event.pathParameters.id;
-  const body = JSON.parse.event.body;
+  const body = JSON.parse(event.body);
   const email = body.email;
   const wantedTickets = body.wantedTickets;
+  console.log(email, wantedTickets)
 
   try {
     const show = await db
@@ -64,7 +65,7 @@ exports.handler = async (event, context) => {
       .promise();
 
     if (show.Item) {
-      console.log(email, wantedTickets)
+     
       return sendResponse(200, { success: true, order: body, event: show.Item });
       //check ticket availability
       //check registrationDeadLine
