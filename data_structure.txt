@@ -1,0 +1,129 @@
+Needed properties:
+{
+  "ID": "unique_event_id",
+  "eventName": "Event Name",
+  "eventLocation": "Event Location",
+  "eventDate": "Event Date",
+  "eventTime": "Event Time",
+  "eventDescription": "Event Description",
+  "ticketPrice": 0.00,
+  "totalTickets": 0,
+  "ticketsLeft": 0,
+  "soldTickets":
+    "soldTickets": [
+  {
+    "buyerEmail": "buyer1@example.com",
+    "ticketIDs": [
+      {
+        "id": "ticket1",
+        "checked": false
+      },
+      {
+        "id": "ticket2",
+        "checked": true
+      }
+    ]
+  },
+  {
+    "buyerEmail": "buyer2@example.com",
+    "ticketIDs": [
+      {
+        "id": "ticket3",
+        "checked": false
+      }
+    ]
+  }
+]
+,
+  "eventImageURL": "URL to event image",
+  "organizer": "Event Organizer Name",
+  "contactEmail": "Organizer's Email",
+  "contactPhone": "Organizer's Phone Number",
+  "eventCategories": ["Category 1", "Category 2"],
+  "eventCapacity": 100,
+  "registrationDeadline": "Registration Deadline Date/Time",
+  "eventTags": ["Tag 1", "Tag 2"],
+  "eventStatus": "Available"  // or "Sold Out," "Canceled," etc. Look below for more!
+}
+
+Event Categories:
+
+Music
+Sports
+Arts & Culture
+Food & Drink
+Conferences
+Workshops
+Charity & Fundraising
+Comedy
+Health & Wellness
+Technology
+Networking
+Education
+Outdoor & Adventure
+Family & Kids
+Fashion
+Business & Finance
+Science & Innovation
+Travel & Tourism
+Gaming
+Film & Entertainment
+Religious & Spiritual
+Automotive
+Political & Social
+Home & Garden
+Hobbies & Special Interests
+
+Event Tags:
+
+Live Music
+Jazz
+Rock
+Classical
+Sports Games
+Football
+Basketball
+Soccer
+Wine Tasting
+Craft Beer
+Food Festivals
+Tech Conference
+Web Development
+Marketing
+Yoga
+Meditation
+Coding Workshops
+Charity Gala
+Stand-up Comedy
+Nutrition
+Startups
+Networking Events
+Professional Development
+Parenting Workshops
+Art Exhibitions
+Gaming Tournaments
+Movie Premieres
+Spiritual Retreat
+Sustainable Living
+Cooking Classes
+Pet-Friendly
+Science Talks
+Astronomy
+Family Fun
+DIY & Crafts
+
+etc etc
+
+
+Event statuses:
+
+Available: Tickets are available for purchase, and the event is open for registration.
+Sold Out: All available tickets have been sold, and no more tickets are available for purchase.
+Canceled: The event has been canceled or postponed, and ticket sales are halted.
+Upcoming Event: This status is relevant when the event is announced, but ticket sales have not yet begun. It indicates that the event is scheduled for the future.
+Registration Closed: Ticket sales have closed, and no more registrations or purchases are allowed. This status can be used in cases where registration deadlines have passed.
+Rescheduled: The event has been rescheduled to a different date, and ticket holders need to be informed.
+Waiting List: When an event is sold out, but there is a waiting list for potential attendees in case of cancellations or additional tickets becoming available.
+On Hold: Temporary status when the event's status is uncertain, and ticket sales are paused.
+Post-Event: After the event has taken place, you can mark it as "Post-Event" to indicate that it has concluded.
+Private Event: For events that are invitation-only and not available for public registration.

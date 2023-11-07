@@ -1,0 +1,53 @@
+service: aws-ticketeer-serverless
+frameworkVersion: '3'
+
+plugins:
+  - serverless-webpack
+
+package:
+  individually: true
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  profile: tobbesoren_test
+  region: eu-north-1
+  iam:
+    role: arn:aws:iam::564920371550:role/tobbesoren-ma22
+
+functions:
+  postEvent:
+    handler: lambda_functions/post_event/index.handler
+    events: 
+      - httpApi:
+          path: '/events'
+          method: POST
+
+  getEvents:
+    handler: lambda_functions/get_events/index.handler
+    events:
+      - httpApi:
+          path: '/events'
+          method: GET
+
+  getEvent:
+    handler: lambda_functions/get_event/index.handler
+    events:
+      - httpApi:
+          path: '/events/{id}'
+          method: GET
+
+
+resources:
+  Resources:
+    dogsDb:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: events-db
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
