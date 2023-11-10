@@ -65,10 +65,12 @@ exports.handler = async (event, context) => {
       .promise();
 
     if (show.Item) {
+      const ticketTiers = show.Item.ticketTiers;
      
-      return sendResponse(200, { success: true, order: body, event: show.Item });
-      //check ticket availability
+      return sendResponse(200, { success: true, ticketTiers: ticketTiers, order: wantedTickets });
+      //check event status
       //check registrationDeadLine
+      //check ticket availability
     } else {
       return sendResponse(404, { success: false, message: "Show not found" });
     }
