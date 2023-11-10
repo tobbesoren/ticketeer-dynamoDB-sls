@@ -1,72 +1,59 @@
-<!--
-title: 'AWS NodeJS Example'
-description: 'This template demonstrates how to deploy a NodeJS function running on AWS Lambda using the traditional Serverless Framework.'
-layout: Doc
-framework: v3
-platform: AWS
-language: nodeJS
-priority: 1
-authorLink: 'https://github.com/serverless'
-authorName: 'Serverless, inc.'
-authorAvatar: 'https://avatars1.githubusercontent.com/u/13742415?s=200&v=4'
--->
+TICKETEER - An API for a mock event and ticket selling service.
 
+Endpoints:
+postEvent:
+  path: '/events'
+  method: POST
+  Add JSON following this template:
 
-# Serverless Framework AWS NodeJS Example
+  {
+			"contactEmail": "tickets@example.com",
+			"eventName": "Bauhaus Gothic Revival Night",
+			"soldTickets": [],
+			"eventDate": "2023-12-10",
+			"eventDescription": "Experience the revival of gothic with Bauhaus in a mesmerizing live show.",
+			"eventLocation": "John Dee, Oslo, Norway",
+			"eventCategories": [
+				"Music",
+				"Gothic Revival"
+			],
+			"organizer": "Gothic Revival Events Norway",
+			"eventTime": "20:00",
+			"eventImageURL": "https://example.com/bauhaus-concert.jpg",
+			"eventTags": [
+				"Gothic Revival",
+				"Live Music"
+			],
+			"contactPhone": "+123-456-7890",
+			"registrationDeadline": "2023-11-30T23:59:59",
+			"ticketTiers": [
+				{
+					"totalTickets": 200,
+					"ticketsLeft": 200,
+					"ticketPrice": 35,
+					"tierName": "General Admission"
+				},
+				{
+					"totalTickets": 100,
+					"ticketsLeft": 100,
+					"ticketPrice": 60,
+					"tierName": "VIP"
+				}
+			],
+			"id": "79900d96-6eef-4072-8478-d637c8d33d2c",
+			"eventCapacity": 300
+		}
 
-This template demonstrates how to deploy a NodeJS function running on AWS Lambda using the traditional Serverless Framework. The deployed function does not include any event definitions as well as any kind of persistence (database). For more advanced configurations check out the [examples repo](https://github.com/serverless/examples/) which includes integrations with SQS, DynamoDB or examples of functions that are triggered in `cron`-like manner. For details about configuration of specific `events`, please refer to our [documentation](https://www.serverless.com/framework/docs/providers/aws/events/).
+getEvents:
+  path: '/events'
+  method: GET
 
-## Usage
+getEvent:
+  path: '/events/{id}'
+  method: GET
 
-### Deployment
-
-In order to deploy the example, you need to run the following command:
-
-```
-$ serverless deploy
-```
-
-After running deploy, you should see output similar to:
-
-```bash
-Deploying aws-node-project to stage dev (us-east-1)
-
-✔ Service deployed to stack aws-node-project-dev (112s)
-
-functions:
-  hello: aws-node-project-dev-hello (1.5 kB)
-```
-
-### Invocation
-
-After successful deployment, you can invoke the deployed function by using the following command:
-
-```bash
-serverless invoke --function hello
-```
-
-Which should result in response similar to the following:
-
-```json
-{
-    "statusCode": 200,
-    "body": "{\n  \"message\": \"Go Serverless v3.0! Your function executed successfully!\",\n  \"input\": {}\n}"
-}
-```
-
-### Local development
-
-You can invoke your function locally by using the following command:
-
-```bash
-serverless invoke local --function hello
-```
-
-Which should result in response similar to the following:
-
-```
-{
-    "statusCode": 200,
-    "body": "{\n  \"message\": \"Go Serverless v3.0! Your function executed successfully!\",\n  \"input\": \"\"\n}"
-}
-```
+orderTicket:
+  path: '/order/{id}'
+  method: PATCH
+  Add JSON:
+  
