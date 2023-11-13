@@ -6,6 +6,7 @@ const db = new AWS.DynamoDB.DocumentClient();
 exports.handler = async (event, context) => {
   const show = JSON.parse(event.body);
   // I should check the event so all necessary properties are there!
+  // valid eventStatuses: AVAILABLE, SOLD_OUT, CANCELLED, ON_HOLD
   const showID = uuid.v4();
 
   show.id = showID;
